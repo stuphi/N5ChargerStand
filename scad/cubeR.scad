@@ -1,4 +1,4 @@
-module cubeR(size=[10,10,10],radius=2,center=false){
+module cubeS(size=[10,10,10],radius=2,center=false){
 	trans_dist = center==true ? -size/2 : [0,0,0];
 	x=size[0];
 	y=size[1];
@@ -27,4 +27,69 @@ module cubeR(size=[10,10,10],radius=2,center=false){
 		}
 }
 
-cubeR(size=[20,30,40],radius=4, center=false);
+module cubeR(size=[10,10,10],radius=2,center=false){
+	trans_dist = center==true ? -size/2 : [0,0,0];
+	x=size[0];
+	y=size[1];
+	z=size[2];
+	r=radius;
+	translate(trans_dist)
+		union(){
+			translate([r,r,0])
+				cube([x-2*r,y-2*r,z],center=false);
+			translate([0,r,r])
+				cube([x,y-2*r,z-2*r],center=false);
+			translate([r,0,r])
+				cube([x-2*r,y,z-2*r],center=false);
+			translate([r,r,r])
+				cylinder(h=z-2*r,r=r);
+			translate([x-r,r,r])
+				cylinder(h=z-2*r,r=r);
+			translate([x-r,y-r,r])
+				cylinder(h=z-2*r,r=r);
+			translate([r,y-r,r])
+				cylinder(h=z-2*r,r=r);
+			translate([r,r,r])
+				rotate([0,90,0])
+					cylinder(h=x-2*r,r=r);
+			translate([r,y-r,r])
+				rotate([0,90,0])
+					cylinder(h=x-2*r,r=r);
+			translate([r,y-r,z-r])
+				rotate([0,90,0])
+					cylinder(h=x-2*r,r=r);
+			translate([r,r,z-r])
+				rotate([0,90,0])
+					cylinder(h=x-2*r,r=r);
+			translate([r,r,r])
+				rotate([270,0,0])
+					cylinder(h=y-2*r,r=r);
+			translate([x-r,r,r])
+				rotate([270,0,0])
+					cylinder(h=y-2*r,r=r);
+			translate([x-r,r,z-r])
+				rotate([270,0,0])
+					cylinder(h=y-2*r,r=r);
+			translate([r,r,z-r])
+				rotate([270,0,0])
+					cylinder(h=y-2*r,r=r);
+			translate([r,r,r])
+				sphere(r);
+			translate([x-r,r,r])
+				sphere(r);
+			translate([x-r,y-r,r])
+				sphere(r);
+			translate([x-r,y-r,z-r])
+				sphere(r);
+			translate([r,y-r,z-r])
+				sphere(r);
+			translate([r,y-r,r])
+				sphere(r);
+			translate([x-r,r,z-r])
+				sphere(r);
+			translate([r,r,z-r])
+				sphere(r);
+		}
+}
+
+cubeS(size=[20,30,40],radius=4, center=false);

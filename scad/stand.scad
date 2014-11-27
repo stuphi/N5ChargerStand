@@ -1,6 +1,6 @@
 use <cubeR.scad>;
 use <charger.scad>;
-$fn=32;
+$fn=24;
 //#charger();
 
 rotate([0,-60,0])
