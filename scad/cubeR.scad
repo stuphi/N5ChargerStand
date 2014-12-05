@@ -1,4 +1,4 @@
-module cubeS(size=[10,10,10],radius=2,center=false){
+module cubeR(size=[10,10,10],radius=2,center=false){
 	trans_dist = center==true ? -size/2 : [0,0,0];
 	x=size[0];
 	y=size[1];
@@ -27,7 +27,7 @@ module cubeS(size=[10,10,10],radius=2,center=false){
 		}
 }
 
-module cubeR(size=[10,10,10],radius=2,center=false){
+module cubeS(size=[10,10,10],radius=2,center=false){
 	trans_dist = center==true ? -size/2 : [0,0,0];
 	x=size[0];
 	y=size[1];

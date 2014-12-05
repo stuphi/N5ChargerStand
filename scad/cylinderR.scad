@@ -1,4 +1,4 @@
-module cylinderR(h=10,r1=5,r2=7,radius=2,center=false){
+module cylinderR(h=10,r1=5,r2=7,radius=3,center=false){
 	trans_dist = center==true ? [0,0,-h/2] : [0,0,0];
 	r=radius;
 	translate(trans_dist)
