@@ -1,5 +1,5 @@
 $fn=32;
-include <utils.scad>;
+use <utils.scad>;
 
 module charger()
 {
@@ -20,7 +20,7 @@ module charger()
 		cube([48,10,6],center=false);
 		translate([0,0,-5.5])
 		rotate([0,90,0])
-		cylinder(h=100, r1=1.5, r2=1.5);
+		cylinder(h=70, r1=1.5, r2=1.5);
 	}
 }
 

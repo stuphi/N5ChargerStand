@@ -5,11 +5,11 @@ module cylinderR(h=10,r1=5,r2=7,radius=3,center=false){
 		hull(){
 			union(){
 				translate([0,0,r])
-				rotate_extrude(convexity = 10)
+				rotate_extrude(convexity = 10, $fn=96)
 					translate([r1-r, 0, 0])
 						circle(r = r);
 				translate([0,0,h-r])
-				rotate_extrude(convexity = 10)
+				rotate_extrude(convexity = 10, $fn=96)
 					translate([r2-r, 0, 0])
 						circle(r = r);
 			}

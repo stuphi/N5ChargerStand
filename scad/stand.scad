@@ -1,7 +1,8 @@
+$fs=0.5;
 use <cubeR.scad>;
 use <cylinderR.scad>;
 use <charger.scad>;
-$fn=96;
+
 
 union(){
 	translate([-25,0,-9.3])
@@ -26,8 +27,8 @@ union(){
 					cylinderR(h=20,r1=333,r2=330.9,center=true);
 			scale([1.02,1.02,1.02])
 				charger();
-			translate([75,0,-27])
-				cubeR([150,12,70],radius=1,center=true);
+			translate([40,0,-27])
+				cubeR([80,12,70],radius=1,center=true);
 			translate([0,0,-38])
 				cubeR([200,48,70],radius=20,center=true);
 			rotate([0,-30,0])
